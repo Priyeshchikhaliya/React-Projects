@@ -1,7 +1,7 @@
 import React from "react";
 import "./Mycss.css";
 // import memesData from "./memesData";
-
+//Hello there
 export default function Meme() {
 	const [meme, setMeme] = React.useState({
 		id: 0,
