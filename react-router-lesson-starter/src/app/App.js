@@ -8,19 +8,41 @@ import Article from "../components/Article";
 import Categories from "../components/Categories";
 import Author from "../components/Author";
 import Profile from "../components/Profile";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <main>
-        {/* Add Routes here! */}
-      </main>
-      <Footer />
-    </div>
-  );
+	return (
+		<Router>
+			<Header />
+			<main>
+				<Switch>
+					<Route path="/Articles/:title">
+						<Article />
+					</Route>
+					<Route path="/Authors/:name">
+						<Author />
+					</Route>
+					<Route path="/About">
+						<About />
+					</Route>
+					<Route path="/Sign-Up">
+						<SignUp />
+					</Route>
+					<Route path="/Articles">
+						<Articles />
+					</Route>
+					<Route path="/Categories">
+						<Categories />
+					</Route>
+					<Route path="/Profile">
+						<Profile />
+					</Route>
+				</Switch>
+			</main>
+			<Footer />
+		</Router>
+	);
 }
 
 export default App;
