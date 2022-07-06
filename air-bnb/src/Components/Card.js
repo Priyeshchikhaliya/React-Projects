@@ -1,6 +1,5 @@
 import React from "react";
 import "../Mycss.css";
-import "../App";
 import star from "../images/star.png"
 export default function Card(props) {
   

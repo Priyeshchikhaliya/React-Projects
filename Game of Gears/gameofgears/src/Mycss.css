@@ -1,0 +1,76 @@
+.container {
+  font-family: sans-serif;
+  padding: 0px 5px;
+}
+
+.title {
+  text-align: center;
+}
+
+.flex-hor {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.flex-hor>div {
+  margin: 6px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.stats-title {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 7px;
+
+}
+
+.item-title {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 7px;
+}
+
+.gear {
+  display: flex;
+  height: auto;
+  width: fit-content;
+  border: 1px solid;
+  border-radius: 7px;
+  margin: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Title {
+  border: 1px solid;
+  border-radius: 7px;
+  margin: 4px;
+  padding: 2px;
+
+}
+
+.Defense {
+  border: 1px solid;
+  border-radius: 7px;
+  margin: 4px;
+  padding: 2px;
+}
+
+.Damage {
+  border: 1px solid;
+  border-radius: 7px;
+  margin: 4px;
+  padding: 2px;
+}
+
+.items-list {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
