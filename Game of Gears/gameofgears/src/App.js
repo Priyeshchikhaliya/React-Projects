@@ -24,6 +24,25 @@ export default function App() {
 
 	const temp = data.filter(preGear => preGear.isWorn);
 
+	for (let i = 0; i < data.length; i++) {
+		data.find(val => {
+			console.log(val.slot);
+		});
+	}
+	// let mySet = new Set([])
+	// data.forEach(item => mySet.add(item.slot))
+	// console.log(mySet);
+	// for (let i = 0; i < temp.length; i++) {
+	// 	let x = temp[i].slot;
+	// 	for (let j = i+1; j < temp.length; j++) {
+	// 		if (temp[j].slot == x && final.includes(x)) {
+	// 			break;
+	// 		}
+
+	// 		final.push(temp[j]);
+	// 	}
+	// }
+
 	const gears = temp.map(Cont => {
 		return (
 			<div key={Cont.id} className="Gear">
