@@ -34,9 +34,14 @@ export default function App() {
     return (
       <div key={Cont.id} className="Gear">
         <h1 className="Title">{Cont.name.toUpperCase()}</h1>
+<<<<<<< HEAD
 		<h2 className="Defense">{Cont.defense}</h2>
         <h2 className="Damage">{Cont.damage}</h2>
         
+=======
+        <h2 className="Defense">{Cont.defense}</h2>
+        <h2 className="Damage">{Cont.damage}</h2>
+>>>>>>> 8cf4af2e9406407ec3f868d10c48abf269cfe664
       </div>
     );
   });
@@ -45,7 +50,11 @@ export default function App() {
     return prev + +current.damage;
   }, 0);
 
+<<<<<<< HEAD
   let totalDefence = final.reduce(function (prev, current) {
+=======
+  let totalDefense = final.reduce(function (prev, current) {
+>>>>>>> 8cf4af2e9406407ec3f868d10c48abf269cfe664
     return prev + +current.defense;
   }, 0);
 
@@ -57,8 +66,13 @@ export default function App() {
         <div className="damage-display">
           <h3>Defense: {totalDamage}</h3>
         </div>
+<<<<<<< HEAD
         <div className="defence-display">
           <h3>Damage: {totalDefence}</h3>
+=======
+        <div className="defense-display">
+          <h3>Damage: {totalDefense}</h3>
+>>>>>>> 8cf4af2e9406407ec3f868d10c48abf269cfe664
         </div>
       </div>
 
