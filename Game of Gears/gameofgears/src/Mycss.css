@@ -1,3 +1,6 @@
+body{
+  background-color: #EAF6F6;
+}
 .container {
   font-family: sans-serif;
   padding: 0px 5px;
@@ -5,6 +8,9 @@
 
 .title {
   text-align: center;
+  padding: 20px;
+  background-color: #66BFBF;
+
 }
 
 .flex-hor {
@@ -13,17 +19,18 @@
   justify-content: center; */
 }
 
-.flex-hor>div {
+.flex-hor > div {
   margin: 6px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .stats-title {
   text-align: center;
   border: 1px solid;
   border-radius: 7px;
+  padding: 10px;
+  background-color: #66BFBF;
 
 }
 
@@ -31,6 +38,8 @@
   text-align: center;
   border: 1px solid;
   border-radius: 7px;
+  background-color: #66BFBF;
+
 }
 
 .gear {
@@ -42,28 +51,32 @@
   margin: 8px;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
 }
 
 .Title {
   border: 1px solid;
   border-radius: 7px;
   margin: 4px;
-  padding: 2px;
-
+  padding: 10px;
+  
 }
 
 .Defense {
   border: 1px solid;
   border-radius: 7px;
   margin: 4px;
-  padding: 2px;
+  padding: 10px;
+  background-color: #B2C8DF;
 }
 
 .Damage {
   border: 1px solid;
   border-radius: 7px;
   margin: 4px;
-  padding: 2px;
+  padding: 10px;
+  background-color: #FF0063;
+
 }
 
 .items-list {
@@ -73,4 +86,53 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+}
+
+.label-toggle {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  border-radius: 7px;
+  background-color: #6E85B7;
+  padding:10px;
+}
+
+.label-toggle-text {
+  font-size: larger;
+}
+
+.flex-hor{
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.damage-display{
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 5px;
+  background-color: #B2C8DF;
+
+}
+
+.defence-display{
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FF0063;
+
+
 }

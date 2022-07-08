@@ -10,81 +10,71 @@ import { items } from "./ItemList";
 // defense: number;
 
 export default function App() {
-	const [data, setData] = React.useState(items);
-	const [checked, setChecked] = React.useState(false);
+  const [data, setData] = React.useState(items);
+  const [checked, setChecked] = React.useState(false);
 
-	function isWornToggle() {
-		setData(
-			data.map(item =>
-				item.isWorn ? { ...item, isWorn: false } : { ...item, isWorn: true }
-			)
-		);
-		setChecked(preVal => !preVal);
-	}
+  function isWornToggle() {
+    setData(
+      data.map((item) =>
+        item.isWorn ? { ...item, isWorn: false } : { ...item, isWorn: true }
+      )
+    );
+    setChecked((preVal) => !preVal);
+  }
 
-	const temp = data.filter(preGear => preGear.isWorn);
+  const temp = data.filter((preGear) => preGear.isWorn);
 
-	for (let i = 0; i < data.length; i++) {
-		data.find(val => {
-			console.log(val.slot);
-		});
-	}
-	// let mySet = new Set([])
-	// data.forEach(item => mySet.add(item.slot))
-	// console.log(mySet);
-	// for (let i = 0; i < temp.length; i++) {
-	// 	let x = temp[i].slot;
-	// 	for (let j = i+1; j < temp.length; j++) {
-	// 		if (temp[j].slot == x && final.includes(x)) {
-	// 			break;
-	// 		}
+  const key = "slot";
 
-	// 		final.push(temp[j]);
-	// 	}
-	// }
+  const final = [...new Map(temp.map((item) => [item[key], item])).values()];
 
-	const gears = temp.map(Cont => {
-		return (
-			<div key={Cont.id} className="Gear">
-				<h1 className="Title">{Cont.name.toUpperCase()}</h1>
-				<h2 className="Damage">{Cont.damage}</h2>
-				<h2 className="Defense">{Cont.defense}</h2>
-			</div>
-		);
-	});
+  console.log(final);
 
-	let totalDamage = temp.reduce(function (prev, current) {
-		return prev + +current.damage;
-	}, 0);
+  const gears = final.map((Cont) => {
+    return (
+      <div key={Cont.id} className="Gear">
+        <h1 className="Title">{Cont.name.toUpperCase()}</h1>
+		<h2 className="Defense">{Cont.defense}</h2>
+        <h2 className="Damage">{Cont.damage}</h2>
+        
+      </div>
+    );
+  });
 
-	let totalDefence = temp.reduce(function (prev, current) {
-		return prev + +current.defense;
-	}, 0);
+  let totalDamage = final.reduce(function (prev, current) {
+    return prev + +current.damage;
+  }, 0);
 
-	return (
-		<div className="container">
-			<h1 className="title">Player Stat Sheet</h1>
-			<h1 className="stats-title">Stats</h1>
-			<div className="flex-hor">
-				<div>
-					<h3>Defense: {totalDamage}</h3>
-				</div>
-				<div>
-					<h3>Damage: {totalDefence}</h3>
-				</div>
-			</div>
+  let totalDefence = final.reduce(function (prev, current) {
+    return prev + +current.defense;
+  }, 0);
 
-			<label className="label-toggle">Toggle</label>
-			<input
-				id="toggle"
-				type="checkbox"
-				name="toggle"
-				onChange={isWornToggle}
-				checked={checked}
-			/>
+  return (
+    <div className="container">
+      <h1 className="title">Player Stat Sheet</h1>
+      <h1 className="stats-title">Stats</h1>
+      <div className="flex-hor">
+        <div className="damage-display">
+          <h3>Defense: {totalDamage}</h3>
+        </div>
+        <div className="defence-display">
+          <h3>Damage: {totalDefence}</h3>
+        </div>
+      </div>
 
-			<h1 className="item-title">Items</h1>
-			<div className="items-list">{gears}</div>
-		</div>
-	);
+      <div className="label-toggle">
+        <h1 className="label-toggle-text">Toggle</h1>
+        <input
+          id="toggle"
+          type="checkbox"
+          name="toggle"
+          onChange={isWornToggle}
+          checked={checked}
+        />
+      </div>
+
+      <h1 className="item-title">Items</h1>
+      <div className="items-list">{gears}</div>
+    </div>
+  );
 }
