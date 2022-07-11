@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function myFunction() {
+        const hello = document.getElementById("focus").focus();
+        console.log(typeof(hello));
+      }
+    </script>
+  </head>
+
+  <body>
+    <form action="#">
+      <br />
+      <br />
+      <label> Hover me: </label>
+      <input type="text"  id="focus" />
+
+      <!-- onmousemove is an event which occurs when someone
+		hovers the mouse on that particular element and calls
+		the function of javascript -->
+      <br />
+      <br />
+      <label>Without Focus: </label>
+      <input type="text" />
+      <br />
+      <br />
+      <input type="button" onclick="myFunction()" value="submit" />
+    </form>
+  </body>
+</html>
+<!-- Example -->
