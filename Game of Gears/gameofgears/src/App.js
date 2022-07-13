@@ -34,10 +34,6 @@ export default function App() {
     return (
       <div key={Cont.id} className="Gear">
         <h1 className="Title">{Cont.name.toUpperCase()}</h1>
-
-        <h2 className="Defense">{Cont.defense}</h2>
-        <h2 className="Damage">{Cont.damage}</h2>
-
         <h2 className="Defense">{Cont.defense}</h2>
         <h2 className="Damage">{Cont.damage}</h2>
       </div>
@@ -48,7 +44,7 @@ export default function App() {
     return prev + +current.damage;
   }, 0);
 
-  let totalDefense = final.reduce(function (prev, current) {
+  let totalDefence = final.reduce(function (prev, current) {
     return prev + +current.defense;
   }, 0);
 
@@ -61,26 +57,23 @@ export default function App() {
           <h3>Defense: {totalDamage}</h3>
         </div>
         <div className="defence-display">
-          <h3>Damage: {totalDefense}</h3>
-          <div className="defense-display">
-            <h3>Damage: {totalDefense}</h3>
-          </div>
+          <h3>Damage: {totalDefence}</h3>
         </div>
-
-        <div className="label-toggle">
-          <h1 className="label-toggle-text">Toggle</h1>
-          <input
-            id="toggle"
-            type="checkbox"
-            name="toggle"
-            onChange={isWornToggle}
-            checked={checked}
-          />
-        </div>
-
-        <h1 className="item-title">Items</h1>
-        <div className="items-list">{gears}</div>
       </div>
+
+      <div className="label-toggle">
+        <h1 className="label-toggle-text">Toggle</h1>
+        <input
+          id="toggle"
+          type="checkbox"
+          name="toggle"
+          onChange={isWornToggle}
+          checked={checked}
+        />
+      </div>
+
+      <h1 className="item-title">Items</h1>
+      <div className="items-list">{gears}</div>
     </div>
   );
 }
