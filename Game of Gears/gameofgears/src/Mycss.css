@@ -115,16 +115,16 @@ body {
   border-radius: 7px;
   width: fit-content;
   margin-left: auto;
-  margin-right: 5px;
-  background-color: #b2c8df;
+  margin-right: auto;
+  background-color: #ff0063;
 }
 
-.defence-display {
+.defense-display {
   padding: 10px;
   border: 1px solid;
   border-radius: 7px;
   width: fit-content;
   margin-left: auto;
-  margin-right: auto;
-  background-color: #ff0063;
+  margin-right: 5px;
+  background-color: #b2c8df;
 }

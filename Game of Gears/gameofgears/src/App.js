@@ -44,7 +44,7 @@ export default function App() {
     return prev + +current.damage;
   }, 0);
 
-  let totalDefence = final.reduce(function (prev, current) {
+  let totalDefense = final.reduce(function (prev, current) {
     return prev + +current.defense;
   }, 0);
 
@@ -53,11 +53,13 @@ export default function App() {
       <h1 className="title">Player Stat Sheet</h1>
       <h1 className="stats-title">Stats</h1>
       <div className="flex-hor">
-        <div className="damage-display">
-          <h3>Defense: {totalDamage}</h3>
+        
+        <div className="defense-display">
+          <h3>Defense: {totalDefense}</h3>
         </div>
-        <div className="defence-display">
-          <h3>Damage: {totalDefence}</h3>
+
+        <div className="damage-display">
+          <h3>Damage: {totalDamage}</h3>
         </div>
       </div>
 
