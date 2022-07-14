@@ -7,11 +7,14 @@ function Menu(props) {
         <div>
             <button onClick={props.toggle}>{props.on ? "Hide" : "Show"} Menu </button>
             <nav style={{display: props.on ? "block" : "none"}}>
-                <h6>Signed in as Coder123</h6>
-                <a>Your Profile</a>
-                <a>Your Repositories</a>
-                <a>Your Stars</a>
-                <a>Your Gists</a>
+                <h4>Signed in as Coder123</h4>
+                <ul>
+                    <li>Your Profile</li>
+                    <li>Your Repositories</li>
+                    <li>Your Stars</li>
+                    <li>Your Gists</li>
+                </ul>
+               
             </nav>
         </div>
     ) 
