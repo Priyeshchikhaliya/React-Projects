@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React from "react"
 import {withToggler} from "./HOCs/withToggler"
 
 function Favorite(props) {
