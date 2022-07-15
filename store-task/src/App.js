@@ -2,6 +2,8 @@ import React from "react";
 import Data from "./itemList";
 import "./index.css";
 import Render from "./Render";
+import Header from "./Header";
+import Catheader from "./Catheader";
 
 export default function App() {
   const [checked, setChecked] = React.useState(false);
@@ -32,6 +34,23 @@ export default function App() {
     }
   };
 
+  const FinalData = data
+    .filter((Cont) => {
+      return checked ? Cont.stocked : Cont;
+    })
+    .filter((Cont) => {
+      return Cont.category == "Sporting Goods" ? Cont : Cont;
+    })
+    .map((item, index) => {
+      return (
+        <>
+          {" "}
+          {index==0&&<Header />}
+          <Catheader data={item.category} />
+          <Render data={item} />
+        </>
+      );
+    });
   return (
     <div>
       <input
@@ -50,20 +69,8 @@ export default function App() {
         />
         <h3 className="label-toggle-text">Only show products in stock.</h3>
       </div>
-      <h3>Sporting Goods</h3>
-      <Render
-        checked={checked}
-        data={data.filter((item) => {
-          return item.category == "Sporting Goods";
-        })}
-      />
-      <h3>Electronics</h3>
-      <Render
-        checked={checked}
-        data={data.filter((item) => {
-          return item.category == "Electronics";
-        })}
-      />
+      
+      {FinalData}
     </div>
   );
 }
