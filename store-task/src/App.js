@@ -32,56 +32,6 @@ export default function App() {
     }
   };
 
-  const FinalData = data
-    .filter((Cont) => {
-      return checked ? Cont.stocked : Cont;
-    })
-    .map((item, index) => {
-      return (
-        <table className="table">
-          <thead>
-            {index === 0 && (
-              <tr>
-                <th>Name</th>
-                <th>Price</th>
-              </tr>
-            )}
-          </thead>
-          <tbody>
-            {item.category === "Electronics" ? (
-              <>
-                <h3>Electronics</h3>
-                <tr>
-                  <td
-                    className={
-                      item.stocked ? "item-stocked" : "item-outstocked"
-                    }
-                  >
-                    {item.name}
-                  </td>
-                  <td>{item.price}</td>
-                </tr>
-              </>
-            ) : (
-              <>
-                {<h3>Sporting Goods</h3>}
-                <tr>
-                  <td
-                    className={
-                      item.stocked ? "item-stocked" : "item-outstocked"
-                    }
-                  >
-                    {item.name}
-                  </td>
-                  <td>{item.price}</td>
-                </tr>
-              </>
-            )}
-          </tbody>
-        </table>
-      );
-    });
-
   return (
     <div>
       <input
@@ -100,8 +50,20 @@ export default function App() {
         />
         <h3 className="label-toggle-text">Only show products in stock.</h3>
       </div>
-
-      <div className="Container">{FinalData}</div>
+      <h3>Sporting Goods</h3>
+      <Render
+        checked={checked}
+        data={data.filter((item) => {
+          return item.category == "Sporting Goods";
+        })}
+      />
+      <h3>Electronics</h3>
+      <Render
+        checked={checked}
+        data={data.filter((item) => {
+          return item.category == "Electronics";
+        })}
+      />
     </div>
   );
 }

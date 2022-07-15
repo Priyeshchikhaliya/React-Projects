@@ -1,0 +1,65 @@
+ // .map((item, index) => {
+    //   return (
+    //     <table className="table">
+    //       <thead>
+    //         {index === 0 && (
+    //           <tr>
+    //             <th>Name</th>
+    //             <th>Price</th>
+    //           </tr>
+    //         )}
+    //       </thead>
+    //       <tbody>
+    //         {item.category === "Electronics" ? (
+    //           <>
+    //             {data.length?<h3>Electronics</h3>:null}
+    //             <tr>
+    //               <td
+    //                 className={
+    //                   item.stocked ? "item-stocked" : "item-outstocked"
+    //                 }
+    //               >
+    //                 {item.name}
+    //               </td>
+    //               <td>{item.price}</td>
+    //             </tr>
+    //           </>
+    //         ) : (
+    //           <>
+    //             {<h3>Sporting Goods</h3>}
+    //             <tr>
+    //               <td
+    //                 className={
+    //                   item.stocked ? "item-stocked" : "item-outstocked"
+    //                 }
+    //               >
+    //                 {item.name}
+    //               </td>
+    //               <td>{item.price}</td>
+    //             </tr>
+    //           </>
+    //         )}
+    //       </tbody>
+    //     </table>
+    //   );
+    // });
+
+
+    -------------------------------------------
+
+      // const FinalData = data
+  //   .filter((Cont) => {
+  //     return checked ? Cont.stocked : Cont;
+  //   })
+  //   .map((Cont, index) => {
+  //     return (
+  //       <>
+  //         <Render
+  //           Cont={Cont.category == "Sporting Goods" && Cont}
+  //           index={index}
+  //         />
+  //         <Render Cont={Cont.category == "Electronics" && Cont} index={index} />
+  //       </>
+  //     );
+  //   });
+  
