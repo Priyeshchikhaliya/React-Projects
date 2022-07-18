@@ -13,7 +13,7 @@ export default function App() {
   React.useEffect(() => {
     ref.current.focus();
   }, []);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
   function stockToggle() {
     setChecked((preVal) => !preVal);
   }
