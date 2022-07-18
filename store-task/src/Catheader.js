@@ -7,7 +7,6 @@ function Header({ data }) {
 
   if (data !== lastcat) {
     lastcat = data;
-
     return <h4>{lastcat}</h4>;
   } else {
     return <h4></h4>;
