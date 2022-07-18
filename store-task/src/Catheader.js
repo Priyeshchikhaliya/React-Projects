@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 let lastcat = "";
 
@@ -9,7 +9,7 @@ function Header({ data }) {
     lastcat = data;
     return <h4>{lastcat}</h4>;
   } else {
-    return <h4></h4>;
+    return <h4>{}</h4>;
   }
 }
 // export default React.memo(Header);

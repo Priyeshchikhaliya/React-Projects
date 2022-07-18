@@ -20,9 +20,11 @@ export default function App() {
 
   const handleSearch = (e) => {
     const finaldata = Data.filter((row) => {
-      if (e.target.value == "") {
+      if (e.target.value === "") {
         return row;
-      } else if (row.name.toLowerCase().includes(e.target.value)) {
+      } else if (
+        row.name.toLowerCase().includes(e.target.value.toLowerCase())
+      ) {
         return row;
       }
     });
@@ -39,13 +41,13 @@ export default function App() {
       return checked ? Cont.stocked : Cont;
     })
     .filter((Cont) => {
-      return Cont.category == "Sporting Goods" ? Cont : Cont;
+      return Cont.category === "Sporting Goods" ? Cont : Cont;
     })
     .map((item, index) => {
       return (
         <>
           {" "}
-          {index == 0 && <Header />}
+          {index === 0 && <Header />}
           <Catheader data={item.category} />
           <Render data={item} />
         </>
