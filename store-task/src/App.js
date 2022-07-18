@@ -60,6 +60,7 @@ export default function App() {
         placeholder="Search..."
         ref={ref}
         onChange={handleSearch}
+        className="search-input"
       />
       <div className="label-toggle">
         <input
@@ -69,7 +70,9 @@ export default function App() {
           onChange={stockToggle}
           checked={checked}
         />
-        <h3 className="label-toggle-text">Only show products in stock.</h3>
+        <label for="toggle" className="label-toggle-text">
+          Only show products in stock.
+        </label>
       </div>
 
       {FinalData}

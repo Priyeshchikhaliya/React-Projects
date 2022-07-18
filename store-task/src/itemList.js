@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default [
   {
     category: "Sporting Goods",
@@ -30,5 +31,6 @@ export default [
     name: "iPhone 5",
   },
   { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" },
+  
   
 ];

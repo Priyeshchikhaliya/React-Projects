@@ -12,5 +12,4 @@ function Header({ data }) {
     return <h4>{}</h4>;
   }
 }
-// export default React.memo(Header);
 export default Header;

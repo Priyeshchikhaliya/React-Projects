@@ -13,6 +13,7 @@ code {
 }
 
 .item-stocked {
+  color: rgb(9, 238, 9);
 }
 
 .item-outstocked {
@@ -26,13 +27,17 @@ code {
 }
 
 .label-toggle-text {
-  font-size: larger;
+  font-size: medium;
   margin: 0px;
 }
 
 .table-title {
   display: flex;
   margin: 0px;
+}
+
+.search-input {
+  margin: 10px;
 }
 
 h1 {
