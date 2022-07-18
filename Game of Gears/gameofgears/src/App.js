@@ -53,7 +53,6 @@ export default function App() {
       <h1 className="title">Player Stat Sheet</h1>
       <h1 className="stats-title">Stats</h1>
       <div className="flex-hor">
-        
         <div className="defense-display">
           <h3>Defense: {totalDefense}</h3>
         </div>
@@ -64,7 +63,9 @@ export default function App() {
       </div>
 
       <div className="label-toggle">
-        <h1 className="label-toggle-text">Toggle</h1>
+        <label for="toggle" className="label-toggle-text">
+          Toggle
+        </label>
         <input
           id="toggle"
           type="checkbox"
