@@ -19,6 +19,7 @@ export default function App() {
   }
 
   const handleSearch = (e) => {
+    // eslint-disable-next-line array-callback-return
     const finaldata = Data.filter((row) => {
       if (e.target.value === "") {
         return row;
