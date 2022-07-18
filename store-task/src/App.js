@@ -45,7 +45,7 @@ export default function App() {
       return (
         <>
           {" "}
-          {index==0&&<Header />}
+          {index == 0 && <Header />}
           <Catheader data={item.category} />
           <Render data={item} />
         </>
@@ -69,7 +69,7 @@ export default function App() {
         />
         <h3 className="label-toggle-text">Only show products in stock.</h3>
       </div>
-      
+
       {FinalData}
     </div>
   );
