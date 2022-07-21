@@ -8,7 +8,8 @@ import Catheader from "./Catheader";
 export default function App() {
   const [checked, setChecked] = React.useState(false);
   const [data, setData] = React.useState(Data);
-
+  const rows = [];
+  let lastCategory = null;
   const ref = React.useRef();
   React.useEffect(() => {
     ref.current.focus();
@@ -37,22 +38,22 @@ export default function App() {
     }
   };
 
-  const FinalData = data
+  data
     .filter((Cont) => {
       return checked ? Cont.stocked : Cont;
     })
-    // .filter((Cont) => {
-    //   return Cont.category === "Sporting Goods" ? Cont : Cont;
-    // })
-    .map((item, index) => {
-      return (
+    .forEach((item, index) => {
+      console.log(lastCategory);
+      rows.push(<Header index={index} />);
+      if (item.category !== lastCategory) {
+        rows.push(<Catheader data={item.category} key={item.category} />);
+      }
+      rows.push(
         <>
-          {" "}
-          <Header index={index} />
-          <Catheader data={item.category} />
           <Render data={item} />
         </>
       );
+      lastCategory = item.category;
     });
 
   return (
@@ -76,8 +77,7 @@ export default function App() {
           Only show products in stock.
         </label>
       </div>
-
-      {FinalData}
+      <tbody> {rows}</tbody>
     </div>
   );
 }
