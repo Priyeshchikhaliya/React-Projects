@@ -48,13 +48,13 @@ export default function App() {
       return (
         <>
           {" "}
-          <Header index={index}/>
+          <Header index={index} />
           <Catheader data={item.category} />
           <Render data={item} />
         </>
       );
     });
-    
+
   return (
     <div>
       <input
