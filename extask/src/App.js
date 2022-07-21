@@ -1,9 +1,9 @@
 import React from "react";
 import Data from "./itemList";
 import "./index.css";
-import Render from "./Render";
+import Render from "./Categories";
 import Header from "./Header";
-import Catheader from "./Catheader";
+import Catheader from "./TableHead";
 
 export default function App() {
   const [checked, setChecked] = React.useState(false);
@@ -48,13 +48,13 @@ export default function App() {
       return (
         <>
           {" "}
-          <Header index={index}/>
+          <Header index={index} />
           <Catheader data={item.category} />
           <Render data={item} />
         </>
       );
     });
-    
+
   return (
     <div>
       <input
