@@ -1,9 +1,13 @@
 import { chromium } from "playwright";
-
+// import { test, expect } from "@playwright/test";
 describe("First Playwright", () => {
   test("This website", async () => {
     const browser = await chromium.launch({ headless: false });
-    const context = await browser.newContext();
+    const context = await browser.newContext({
+      recordVideo: {
+        dir: "video/",
+      },
+    });
     const page = await context.newPage();
     await page.goto("https://letcode.in/");
     // Click text=Log in
