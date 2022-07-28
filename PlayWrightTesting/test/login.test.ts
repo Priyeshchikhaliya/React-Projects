@@ -1,6 +1,6 @@
 import { chromium, webkit, firefox } from "playwright";
-// import { test, expect } from "@playwright/test";
-describe("First Playwright", () => {
+import { test, expect } from "@playwright/test";
+// describe("First Playwright", () => {
   test("This website", async () => {
     for (const browserList of [chromium, webkit, firefox]) {
       const browser = await browserList.launch({ headless: false });
@@ -62,4 +62,4 @@ describe("First Playwright", () => {
       // await browser.close();
     }
   });
-});
+// });
