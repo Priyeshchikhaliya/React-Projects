@@ -1,15 +1,17 @@
 import { chromium, webkit, firefox } from "playwright";
 // import { test, expect } from "@playwright/test";
+import config from "../playwright.config"
 describe("First Playwright", () => {
   test("This website", async () => {
-    for (const browserList of [chromium, webkit, firefox]) {
-      const browser = await browserList.launch({ headless: false });
+    [chromium, webkit, firefox].forEach(async (e) => {
+      const browser = await e.launch({ headless: false });
       const context = await browser.newContext({
         recordVideo: {
           dir: "video/",
         },
       });
       const page = await context.newPage();
+      await page.goto("https://testingbot.com/");
       await page.goto("https://letcode.in/");
       // Click text=Log in
       await page.locator("text=Log in").click();
@@ -57,9 +59,9 @@ describe("First Playwright", () => {
       // Click text=Sign out
       await page.locator("text=Sign out").click();
       await page.waitForURL("https://letcode.in/");
-      // await page.close();
-      // await context.close();
-      // await browser.close();
-    }
+      await page.close();
+      await context.close();
+      await browser.close();
+    });
   });
 });
