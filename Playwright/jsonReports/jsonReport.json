@@ -1,0 +1,100 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Priyesh/React-Projects/Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "",
+        "testDir": "C:/Users/Priyesh/React-Projects/Playwright",
+        "testIgnore": [],
+        "testMatch": [
+          "tests/para.test.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "jsonReports/jsonReport.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "C:/Users/Priyesh/React-Projects/Playwright",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.24.1",
+    "workers": 6,
+    "webServer": null,
+    "_webServers": [],
+    "_globalOutputDir": "C:\\Users\\Priyesh\\React-Projects\\Playwright",
+    "_configDir": "C:\\Users\\Priyesh\\React-Projects\\Playwright",
+    "_testGroupsCount": 1
+  },
+  "suites": [
+    {
+      "title": "tests\\para.test.ts",
+      "file": "tests/para.test.ts",
+      "line": 0,
+      "column": 0,
+      "specs": [
+        {
+          "title": "This website",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 13,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "tests/para.test.ts",
+          "line": 4,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
