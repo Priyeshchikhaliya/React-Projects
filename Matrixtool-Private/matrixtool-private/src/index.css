@@ -1,7 +1,9 @@
 body {
-  background-image: url("./Images/Wall\ for\ website.jpg");
+  color: #ffc23c;
+  background-image: url("./Images/iceberg_glacier_ice_194681_1920x1080.jpg");
   background-color: #cccccc;
   background-attachment: fixed;
+  font-family: 'Kanit', sans-serif;
 }
 .container {
   height: fit-content;
@@ -20,12 +22,12 @@ body {
 } */
 .main-container {
   /* From https://css.glass */
-  background: rgba(31, 188, 169, 0.16);
+  background: rgba(92, 199, 186, 0.16);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.7px);
-  -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(31, 188, 169, 0.18);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(92, 199, 186, 0.3);
 
   height: fit-content;
   width: fit-content;
@@ -33,6 +35,13 @@ body {
   margin-right: auto;
   margin-top: 15%;
   padding: 40px;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.3s;
+}
+.main-container:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .container-fluid {
   display: flex;
@@ -45,6 +54,7 @@ body {
   text-align: center;
   margin: 5px;
   opacity: 0.8;
+  font-size: medium;
 }
 .hrs:hover {
   opacity: 1;
@@ -56,6 +66,7 @@ body {
   text-align: center;
   margin: 5px;
   opacity: 0.8;
+  font-size: medium;
 }
 .min:hover {
   opacity: 1;
@@ -67,11 +78,11 @@ body {
   text-align: center;
   margin: 5px;
   opacity: 0.8;
+  font-size: medium;
 }
 .break:hover {
   opacity: 1;
 }
-
 h1 {
   margin: 5px;
   color: #1f4690;

@@ -11,10 +11,10 @@ const App = () => {
     min: 0,
     break: 0,
   });
-  const [timeleft, settimeLeft] = useState({
-    tlhr: 0,
-    tlmin: 0,
-  });
+  // const [timeleft, settimeLeft] = useState({
+  //   tlhr: 0,
+  //   tlmin: 0,
+  // });
 
   function onchange(e) {
     const { name, value } = e.target;
@@ -86,7 +86,7 @@ const App = () => {
         </div>
 
         <br />
-        <h1 htmlFor="break">Break Taken</h1>
+        <h1 htmlFor="break">Extra Break Time</h1>
         <input
           name="break"
           type="text"
