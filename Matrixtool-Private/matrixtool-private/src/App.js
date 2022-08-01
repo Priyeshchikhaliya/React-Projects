@@ -35,6 +35,7 @@ const App = () => {
         useGrouping: false,
       }
     );
+
     temp >= 60
       ? setshowTime((pre) => ({
           ...pre,
@@ -49,7 +50,7 @@ const App = () => {
           show: true,
         }));
   }, [time.break, time.hrs, time.min]);
-
+  console.log(time.min);
   return (
     <div className="main-container">
       <div className="container">
