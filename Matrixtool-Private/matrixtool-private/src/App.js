@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./index.css";
 const App = () => {
   const [time, setTime] = useState({
-    hrs: null,
+    hrs: 8,
     min: null,
     break: null,
   });
-  const [show, setShow] = useState(false);
+  const [showtime, setshowTime] = useState({
+    hrs: 0,
+    min: 0,
+    break: 0,
+  });
+  const [timeleft, settimeLeft] = useState({
+    tlhr: 0,
+    tlmin: 0,
+  });
+
   function onchange(e) {
     const { name, value } = e.target;
     setTime((prevFormData) => ({
@@ -14,67 +23,92 @@ const App = () => {
       [name]: value,
     }));
   }
-
-  function onclick() {
-    setShow(true);
-
-    let temp = Number(time.min) + Number(time.break);
-    let temphr = (Number(time.hrs)*60+600)/60-12
+  React.useEffect(() => {
+    let temp = (Number(time.min) + Number(time.break)).toLocaleString("en-US", {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    });
+    let temphr = ((Number(time.hrs) * 60 + 600) / 60 - 12).toLocaleString(
+      "en-US",
+      {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      }
+    );
     temp >= 60
-      ? setTime((pre) => ({
+      ? setshowTime((pre) => ({
+          ...pre,
+          hrs: temphr++,
+          min: temp - 60,
+          show: true,
+        }))
+      : setshowTime((pre) => ({
           ...pre,
           hrs: temphr,
-          min: temp - 60,
-        }))
-      : setTime((pre) => ({
-          ...pre,
-          hrs: temphr, 
           min: temp,
+          show: true,
         }));
-  }
+  }, [time.break, time.hrs, time.min]);
+
+  React.useEffect(() => {
+    remainingTime(showtime.hrs, showtime.min);
+  });
+
+  function remainingTime(h, m) {}
 
   return (
-    <div>
-      <div>
-        <input
-          name="hrs"
-          type="text"
-          value={time.hrs}
-          className="hrs"
-          onChange={onchange}
-          placeholder="Hrs"
-        />
-        :
-        <input
-          name="min"
-          type="text"
-          maxLength="2"
-          value={time.min}
-          className="min"
-          onChange={onchange}
-          placeholder="Min."
-        />{" "}
+    <div className="main-container">
+      <div className="container">
+        <h1 className="title">Arrival Time</h1>
+        <div className="container-fluid">
+          <input
+            name="hrs"
+            type="text"
+            value={time.hrs}
+            className="hrs"
+            onChange={onchange}
+            placeholder="Hours"
+            maxLength="2"
+          />
+          <b>:</b>
+          <input
+            name="min"
+            type="text"
+            maxLength="2"
+            value={time.min}
+            className="min"
+            onChange={onchange}
+            placeholder="Minutes"
+          />
+          <h1>
+            <span>AM</span>
+          </h1>
+        </div>
+
         <br />
-        <label htmlFor="break">Break Taken</label>
+        <h1 htmlFor="break">Break Taken</h1>
         <input
           name="break"
           type="text"
           maxLength="2"
           value={time.break}
-          id="extra"
+          className="break"
           onChange={onchange}
-          placeholder="Min."
+          placeholder="Minutes"
         />
         {
           <>
-            {show && (
-              <h1>
-                {time.hrs} : {time.min} <span>PM</span>{" "}
-              </h1>
-            )}
+            <h1 className="leave">You Can Leave After</h1>
+            <h1 className="leave">
+              {showtime.hrs} :{" "}
+              {showtime.min.toLocaleString("en-US", {
+                minimumIntegerDigits: 2,
+                useGrouping: false,
+              })}{" "}
+              <span>PM</span>{" "}
+            </h1>
           </>
         }
-        <button onClick={onclick}>Calculate</button>
       </div>
     </div>
   );
