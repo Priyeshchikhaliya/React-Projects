@@ -82,7 +82,7 @@ const App = () => {
         </div>
 
         <br />
-        <h1 htmlFor="break">Extra Break Time</h1>
+        <h1 htmlFor="break">Total Extra Break Time</h1>
         <input
           name="break"
           type="text"
