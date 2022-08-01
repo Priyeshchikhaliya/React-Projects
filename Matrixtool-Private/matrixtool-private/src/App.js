@@ -50,18 +50,13 @@ const App = () => {
         }));
   }, [time.break, time.hrs, time.min]);
 
-  React.useEffect(() => {
-    remainingTime(showtime.hrs, showtime.min);
-  });
-
-  function remainingTime(h, m) {}
-
   return (
     <div className="main-container">
       <div className="container">
         <h1 className="title">Arrival Time</h1>
         <div className="container-fluid">
           <input
+            multiple
             name="hrs"
             type="text"
             value={time.hrs}
