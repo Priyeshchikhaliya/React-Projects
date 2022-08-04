@@ -7,7 +7,6 @@
 👤 **Priyesh**
 
 * Github: [@priyeshchikhaliya](https://github.com/priyeshchikhaliya)
-* LinkedIn: [@priyesh chikhaliya](https://linkedin.com/in/priyesh chikhaliya)
 
 ## Show your support
 
