@@ -11,10 +11,10 @@ const App = () => {
     min: 0,
     break: 0,
   });
-  // const [timeleft, settimeLeft] = useState({
-  //   tlhr: 0,
-  //   tlmin: 0,
-  // });
+  const [timeleft, settimeLeft] = useState({
+    tlhr: 0,
+    tlmin: 0,
+  });
 
   function onchange(e) {
     const { name, value } = e.target;
