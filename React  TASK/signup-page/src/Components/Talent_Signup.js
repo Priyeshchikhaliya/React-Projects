@@ -1,41 +1,48 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
+import * as React from "react";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Axios from "axios";
 const theme = createTheme();
 
 export default function SignUp() {
+  const [talentData, setTalentData] = React.useState({
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  // Fetching Talent Data
+  React.useEffect(() => {
+    Axios.get("http://wren.in:3200/api/sign-up/talent").then((res) =>
+      console
+        .log("Fetching Talent Data ::", res)
+        .catch((err) => console.log(err))
+    );
+  });
+
+  // Posting Talent Data
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    // console.log(talentData);
+    Axios.post("http://wren.in:3200/api/sign-up/talent", {
+      first_name: talentData.first_name,
+      last_name: talentData.last_name,
+      username: talentData.username,
+      email: talentData.email,
+      password: talentData.password,
+    })
+      .then((res) => console.log("Posting Talent Data::", res))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -45,20 +52,22 @@ export default function SignUp() {
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Create Your Talent Account
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
@@ -67,9 +76,18 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  value={talentData.first_name}
+                  onChange={(e) =>
+                    setTalentData((prevFormData) => {
+                      return {
+                        ...prevFormData,
+                        first_name: e.target.value,
+                      };
+                    })
+                  }
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -77,6 +95,34 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  value={talentData.last_name}
+                  onChange={(e) =>
+                    setTalentData((prevFormData) => {
+                      return {
+                        ...prevFormData,
+                        last_name: e.target.value,
+                      };
+                    })
+                  }
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="username"
+                  label="User Name"
+                  name="username"
+                  autoComplete="family-name"
+                  value={talentData.username}
+                  onChange={(e) =>
+                    setTalentData((prevFormData) => {
+                      return {
+                        ...prevFormData,
+                        username: e.target.value,
+                      };
+                    })
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
@@ -84,9 +130,18 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Email"
                   name="email"
                   autoComplete="email"
+                  value={talentData.email}
+                  onChange={(e) =>
+                    setTalentData((prevFormData) => {
+                      return {
+                        ...prevFormData,
+                        email: e.target.value,
+                      };
+                    })
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
@@ -98,12 +153,23 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value={talentData.password}
+                  onChange={(e) =>
+                    setTalentData((prevFormData) => {
+                      return {
+                        ...prevFormData,
+                        password: e.target.value,
+                      };
+                    })
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  control={
+                    <Checkbox value="allowExtraEmails" color="primary" />
+                  }
+                  label="I agree to terms and conditions."
                 />
               </Grid>
             </Grid>
@@ -115,16 +181,8 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
