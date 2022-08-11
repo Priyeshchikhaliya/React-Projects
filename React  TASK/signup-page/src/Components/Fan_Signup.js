@@ -10,11 +10,10 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Axios from "axios";
-// import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 const theme = createTheme();
 
-export default function SignUp() {
+export default function Fan_SignUp() {
   const [fanData, setFanData] = React.useState({
     first_name: "",
     last_name: "",
@@ -22,26 +21,73 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+
+  const [formErrors, setFormErrors] = React.useState({});
+  const [isAgree, setIsAgree] = React.useState(false);
   //Fetching Fan data
   React.useEffect(() => {
     Axios.get("http://wren.in:3200/api/sign-up/fan").then((res) =>
       console.log("Fetching Fan Data::", res).catch((err) => console.log(err))
     );
-  });
+  }, []);
 
   // Posting Fan Data
-  const handleSubmit = (event) => {
+  const Submit = (event) => {
     event.preventDefault();
     // console.log(fanData);
-    Axios.post("http://wren.in:3200/api/sign-up/fan", {
-      first_name: fanData.first_name,
-      last_name: fanData.last_name,
-      username: fanData.username,
-      email: fanData.email,
-      password: fanData.password,
-    })
-      .then((res) => console.log("Posting Fan Data::", res))
-      .catch((err) => console.log(err));
+    // console.log(formErrors);
+    setFormErrors(validate(fanData));
+    if (Object.keys(formErrors).length === 0 && isAgree) {
+      Axios.post("http://wren.in:3200/api/sign-up/fan", {
+        first_name: fanData.first_name,
+        last_name: fanData.last_name,
+        username: fanData.username,
+        email: fanData.email,
+        password: fanData.password,
+      })
+        .then((res) => console.log("Posting Fan Data::", res))
+        .catch((err) => console.log(err));
+    }
+    setTimeout(() => {
+      setFanData((prevFormData) => {
+        return {
+          ...prevFormData,
+          first_name: "",
+          last_name: "",
+          username: "",
+          email: "",
+          password: "",
+        };
+      });
+    }, 5000);
+    setIsAgree(false);
+  };
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    if (!regex.test(values.email)) {
+      errors.email = "This is not a valid email format!";
+    }
+    if (values.password.length < 4) {
+      errors.password = "Password must be more than 4 characters";
+    } else if (values.password.length > 10) {
+      errors.password = "Password cannot exceed more than 10 characters";
+    }
+
+    return errors;
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFanData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value,
+      };
+    });
+  };
+  const onClick = () => {
+    setIsAgree(true);
   };
 
   return (
@@ -59,141 +105,97 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Create Your Fan Account
           </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                  value={fanData.first_name}
-                  validators={["required"]}
-                  errorMessages={["this field is required"]}
-                  onChange={(e) =>
-                    setFanData((prevFormData) => {
-                      return {
-                        ...prevFormData,
-                        first_name: e.target.value,
-                      };
-                    })
-                  }
-                />
+          <Box sx={{ mt: 3}}>
+            <form onSubmit={Submit}>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    autoComplete="given-name"
+                    name="first_name"
+                    required
+                    fullWidth
+                    id="firstName"
+                    label="First Name"
+                    autoFocus
+                    value={fanData.first_name}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="lastNaame"
+                    label="Last Name"
+                    name="last_name"
+                    autoComplete="family-name"
+                    value={fanData.last_name}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="username"
+                    label="User Name"
+                    name="username"
+                    autoComplete="family-name"
+                    value={fanData.username}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email"
+                    name="email"
+                    autoComplete="email"
+                    value={fanData.email}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <p>{formErrors.email}</p>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="new-password"
+                    value={fanData.password}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <p>{formErrors.password}</p>
+                <Grid item xs={12}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={isAgree}
+                        onClick={onClick}
+                        color="primary"
+                      />
+                    }
+                    label="I agree to terms and conditions."
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                  value={fanData.last_name}
-                  validators={["required"]}
-                  errorMessages={["this field is required"]}
-                  onChange={(e) =>
-                    setFanData((prevFormData) => {
-                      return {
-                        ...prevFormData,
-                        last_name: e.target.value,
-                      };
-                    })
-                  }
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="username"
-                  label="User Name"
-                  name="username"
-                  autoComplete="family-name"
-                  value={fanData.username}
-                  validators={["required"]}
-                  errorMessages={["this field is required"]}
-                  onChange={(e) =>
-                    setFanData((prevFormData) => {
-                      return {
-                        ...prevFormData,
-                        username: e.target.value,
-                      };
-                    })
-                  }
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email"
-                  name="email"
-                  autoComplete="email"
-                  value={fanData.email}
-                  validators={["required", "isEmail"]}
-                  errorMessages={[
-                    "this field is required",
-                    "email is not valid",
-                  ]}
-                  onChange={(e) =>
-                    setFanData((prevFormData) => {
-                      return {
-                        ...prevFormData,
-                        email: e.target.value,
-                      };
-                    })
-                  }
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  value={fanData.password}
-                  validators={["required"]}
-                  errorMessages={["this field is required"]}
-                  onChange={(e) =>
-                    setFanData((prevFormData) => {
-                      return {
-                        ...prevFormData,
-                        password: e.target.value,
-                      };
-                    })
-                  }
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="I agree to terms and conditions."
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={handleSubmit}
-            >
-              Sign Up
-            </Button>
+              {!isAgree && <p>Please agree terms and conditions.</p>}
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign Up
+              </Button>
+            </form>
           </Box>
         </Box>
       </Container>
