@@ -105,7 +105,7 @@ export default function Fan_SignUp() {
           <Typography component="h1" variant="h5">
             Create Your Fan Account
           </Typography>
-          <Box sx={{ mt: 3}}>
+          <Box maxWidth="100%" height="auto" sx={{ mt: 3 }}>
             <form onSubmit={Submit}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
