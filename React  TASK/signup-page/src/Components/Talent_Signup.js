@@ -53,18 +53,18 @@ export default function Talent_Signup() {
         .catch((err) => console.log(err));
     }
 
-    setTimeout(() => {
-      setTalentData((prevFormData) => {
-        return {
-          ...prevFormData,
-          first_name: "",
-          last_name: "",
-          username: "",
-          email: "",
-          password: "",
-        };
-      });
-    }, 5000);
+    // setTimeout(() => {
+    //   setTalentData((prevFormData) => {
+    //     return {
+    //       ...prevFormData,
+    //       first_name: "",
+    //       last_name: "",
+    //       username: "",
+    //       email: "",
+    //       password: "",
+    //     };
+    //   });
+    // }, 5000);
     setIsAgree(false);
   };
   const validate = (values) => {

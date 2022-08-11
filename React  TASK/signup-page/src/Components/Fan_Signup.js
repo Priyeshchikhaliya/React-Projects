@@ -48,18 +48,18 @@ export default function Fan_SignUp() {
         .then((res) => console.log("Posting Fan Data::", res))
         .catch((err) => console.log(err));
     }
-    setTimeout(() => {
-      setFanData((prevFormData) => {
-        return {
-          ...prevFormData,
-          first_name: "",
-          last_name: "",
-          username: "",
-          email: "",
-          password: "",
-        };
-      });
-    }, 5000);
+    // setTimeout(() => {
+    //   setFanData((prevFormData) => {
+    //     return {
+    //       ...prevFormData,
+    //       first_name: "",
+    //       last_name: "",
+    //       username: "",
+    //       email: "",
+    //       password: "",
+    //     };
+    //   });
+    // }, 5000);
     setIsAgree(false);
   };
   const validate = (values) => {
