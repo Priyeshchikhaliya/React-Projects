@@ -8,24 +8,6 @@
 
 > Contains my React work.
 
-## Install
-
-```sh
-N/A
-```
-
-## Usage
-
-```sh
-N/A
-```
-
-## Run tests
-
-```sh
-N/A
-```
-
 ## Author
 
 👤 **Priyesh Chikhaliya**
