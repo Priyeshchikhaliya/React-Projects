@@ -29,7 +29,7 @@ npm run test
 
 * Website: check my GITHUB
 * Github: [@Priyeshchikhaliya](https://github.com/Priyeshchikhaliya)
-* LinkedIn: [@Priyesh Chikhaliya ](https://linkedin.com/in/Priyesh Chikhaliya )
+* LinkedIn: [@Priyesh Chikhaliya ](https://www.linkedin.com/in/priyesh-chikhaliya-a11753151)
 
 ## Show your support
 
