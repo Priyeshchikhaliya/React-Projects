@@ -6,7 +6,7 @@
 
 👤 **Priyesh Chikhaliya**
 
-* Website: visit my Github
+* Website: https://github.com/Priyeshchikhaliya
 * Twitter: [@Priyesh\_\_\_Patel](https://twitter.com/Priyesh\_\_\_Patel)
 * Github: [@Priyeshchikhaliya](https://github.com/Priyeshchikhaliya)
 * LinkedIn: [@Priyesh Chikhaliya ](https://www.linkedin.com/in/priyesh-chikhaliya-a11753151)
