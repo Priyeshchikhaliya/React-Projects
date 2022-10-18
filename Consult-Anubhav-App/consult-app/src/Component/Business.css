@@ -1,0 +1,43 @@
+.main-busi-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 96px;
+}
+.title-busi-container {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 72px;
+  /* or 144% */
+
+  display: flex;
+  align-items: center;
+}
+.busi-desc-container {
+  display: flex;
+  flex-direction: column;
+gap: 56px;
+
+}
+.header {
+  font-family: "Inter";
+  font-style: normal;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: 0px 3px 25px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+  display: flex;
+  text-align: center;
+  padding: 24px 48px;
+}
+.sub-header {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+}
+.sub-desc-header {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}

@@ -14,7 +14,7 @@ export default function HeroImage() {
             development skills for long-term profitability.
           </p>
         </div>
-        <div >
+        <div>
           <button className="GTbutton">Get in Touch</button>
         </div>
       </div>
