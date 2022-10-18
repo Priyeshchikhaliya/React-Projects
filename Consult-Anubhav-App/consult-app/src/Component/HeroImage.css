@@ -1,0 +1,36 @@
+.main-container {
+  background-image:  url(../assets/Ellipse2.png),url(../assets/Ellipse1.png);
+  background-repeat: no-repeat;
+  display: flex;
+  padding: 144px 134px 56px 86px;
+  justify-content: space-between;
+  width: 100%;
+}
+.desc-div {
+  font-family: "Inter";
+}
+.head {
+  font-weight: 700;
+  font-size: 50px;
+}
+.subtitle {
+  font-weight: 500;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -1px;
+}
+.GTbutton {
+  background: #214462;
+  padding: 15px 30px;
+  border: 2px solid #262626;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 32px;
+  color: #02cfaa;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.image-container {
+}
