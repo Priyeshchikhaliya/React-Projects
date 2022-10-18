@@ -30,10 +30,10 @@ npm run test
 👤 **Priyesh Chikhaliya**
 
 * Github: [@ Priyeshchikhaliya](https://github.com/ Priyeshchikhaliya)
+* LinkedIn: [@Priyesh Chikhaliya ](https://www.linkedin.com/in/priyesh-chikhaliya-a11753151)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

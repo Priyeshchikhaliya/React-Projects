@@ -1,9 +1,9 @@
-<h1 align="center">Welcome to Store Task  👋</h1>
+<h1 align="center">Welcome to Game of Gears  👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> It is store app, Dynamic store Categories will be created according to data. 
+> It is project on dynamic data representation using React.
 
 ## Install
 
@@ -25,9 +25,9 @@ npm run test
 
 ## Author
 
-👤 **Priyesh **
+👤 **Priyesh Chikhaliya **
 
-* Website: check my GITHUB
+* Website: https://github.com/Priyeshchikhaliya
 * Github: [@Priyeshchikhaliya](https://github.com/Priyeshchikhaliya)
 * LinkedIn: [@Priyesh Chikhaliya ](https://www.linkedin.com/in/priyesh-chikhaliya-a11753151)
 
