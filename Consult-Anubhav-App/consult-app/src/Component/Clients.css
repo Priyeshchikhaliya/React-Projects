@@ -1,7 +1,8 @@
 .main-client-container {
   display: flex;
   justify-content: space-between;
-  padding: 64px 96px;
+  /* padding: 64px 96px; */
+padding: 11vh 8vh;
 
 }
 .title-client-container {
@@ -15,7 +16,7 @@
 .brand-container {
   display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 3vh;
     grid-auto-rows: minmax(100px, auto);
 }
 .brand-block{

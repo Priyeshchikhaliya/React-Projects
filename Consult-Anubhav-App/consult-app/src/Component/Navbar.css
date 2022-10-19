@@ -4,7 +4,8 @@
   justify-content: space-between;
   align-items: center;
   background: #214462;
-  padding: 8px 90px;
+  /* padding: 8px 90px; */
+  padding: 3vh 7vh;
 }
 .title-container {
   font-family: "Montserrat";

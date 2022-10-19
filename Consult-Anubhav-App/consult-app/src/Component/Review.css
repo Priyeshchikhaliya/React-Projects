@@ -1,0 +1,53 @@
+.main-rev-container {
+  font-family: "Inter";
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  padding: 24vh 10vh;
+
+}
+.title-rev-container {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 72px;
+  display: flex;
+  align-items: center;
+}
+.rev-desc-container {
+  text-align: center;
+  box-shadow: 0px 3px 25px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+  width: 80vh;
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profileImage{
+    /* width: 300px; */
+    height: 300px;
+   
+}
+.rev-text-1 {
+}
+.rev-header {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+}
+.rev-desc-header {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: center;
+}
+.rev-text-2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}

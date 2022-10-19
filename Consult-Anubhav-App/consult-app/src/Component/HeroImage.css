@@ -2,8 +2,10 @@
   background-image:  url(../assets/Ellipse2.png),url(../assets/Ellipse1.png);
   background-repeat: no-repeat;
   display: flex;
-  padding: 144px 134px 56px 86px;
+  /* padding: 144px 134px 56px 86px; */
+  padding: 2vh 5vh;
   justify-content: space-between;
+
 }
 .desc-div {
   font-family: "Inter";

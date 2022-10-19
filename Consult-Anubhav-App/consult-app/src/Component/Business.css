@@ -1,7 +1,9 @@
 .main-busi-container {
   display: flex;
   justify-content: space-between;
-  padding: 64px 96px;
+  /* padding: 64px 96px; */
+  padding: 7vh 6vh;
+
 }
 .title-busi-container {
   font-family: "Inter";

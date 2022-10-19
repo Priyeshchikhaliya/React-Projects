@@ -19,7 +19,7 @@ export default function HeroImage() {
         </div>
       </div>
       <div className="image-container">
-        <img src={StudentImage} alt="fireSpot" />
+        <img src={StudentImage} alt="student" />
       </div>
     </div>
   );
