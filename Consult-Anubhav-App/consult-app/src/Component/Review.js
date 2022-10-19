@@ -7,7 +7,7 @@ export default function Review() {
       <div className="title-rev-container">Look What our clients say</div>{" "}
       <div className="rev-desc-container">
         <div className="profileImage">
-          <img src={ProfileImage} alt="profile" />
+          <img className="ProIMG" src={ProfileImage} alt="profile" />
         </div>
         <div className="rev-text-1">
           <div className="rev-header">Cheng-Han Lee</div>
