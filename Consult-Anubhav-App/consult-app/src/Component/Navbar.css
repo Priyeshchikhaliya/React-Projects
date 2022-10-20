@@ -5,7 +5,6 @@
   align-items: center;
   background: #214462;
   /* padding: 8px 90px; */
-  padding: 3vh 7vh;
 }
 .title-container {
   font-family: "Montserrat";
@@ -13,8 +12,11 @@
   font-size: 33px;
   line-height: 32px;
   color: #ffffff;
+  padding: 3vh 7vh;
+
 }
 .links-container {
+  padding: 3vh 7vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

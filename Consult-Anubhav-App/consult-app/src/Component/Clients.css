@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-between;
   /* padding: 64px 96px; */
-padding: 11vh 8vh;
-
 }
 .title-client-container {
   font-weight: 700;
@@ -12,15 +10,17 @@ padding: 11vh 8vh;
   display: flex;
   align-items: center;
   color: #262626;
+  padding: 11vh 8vh;
 }
 .brand-container {
   display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3vh;
-    grid-auto-rows: minmax(100px, auto);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vh;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 11vh 8vh;
 }
-.brand-block{
+.brand-block {
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }

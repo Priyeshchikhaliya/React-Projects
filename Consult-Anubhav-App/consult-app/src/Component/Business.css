@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-between;
   /* padding: 64px 96px; */
-  padding: 7vh 6vh;
-
 }
 .title-busi-container {
   font-family: "Inter";
@@ -11,16 +9,15 @@
   font-weight: 700;
   font-size: 50px;
   line-height: 72px;
-  /* or 144% */
-
   display: flex;
   align-items: center;
+  padding: 7vh 6vh;
 }
 .busi-desc-container {
   display: flex;
   flex-direction: column;
-gap: 56px;
-
+  gap: 56px;
+  padding: 7vh 6vh;
 }
 .header {
   font-family: "Inter";
